@@ -1,0 +1,155 @@
+/* --- Tema Geral --- */
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #121212;
+    color: #e0e0e0;
+  }
+  
+  /* --- Cabeçalho e Navegação --- */
+  header, nav {
+    background-color: #1f1f1f;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  nav a {
+    margin: 0 15px;
+    text-decoration: none;
+    color: #80dfff;
+    transition: color 0.3s;
+  }
+  
+  nav a:hover {
+    color: #00ffff;
+  }
+  
+  /* --- Conteúdo Principal --- */
+  main {
+    padding: 20px;
+    max-width: 800px;
+    margin: auto;
+  }
+  
+  /* --- Formulários e Botões --- */
+  input,
+  button,
+  textarea,
+  select {
+    display: block;
+    width: 100%;
+    margin: 10px 0;
+    padding: 10px;
+    background-color: #2c2c2c;
+    border: 1px solid #444;
+    color: #fff;
+    border-radius: 6px;
+  }
+  
+  button {
+    background-color: #00bcd4;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s;
+  }
+  
+  button:hover {
+    background-color: #0097a7;
+  }
+  
+  /* --- Imagens e Cards --- */
+  img {
+    max-width: 100%;
+    border-radius: 12px;
+  }
+  
+  .card {
+    background-color: #1e1e1e;
+    border: 1px solid #333;
+    border-radius: 10px;
+  }
+  
+  .card-title,
+  .card-text {
+    color: #e0e0e0;
+  }
+  
+  /* --- Links e Outros --- */
+  a.btn {
+    text-align: center;
+    text-decoration: none;
+  }
+  
+  pre {
+    background-color: #1d1d1d;
+    padding: 15px;
+    border-radius: 8px;
+    overflow-x: auto;
+  }
+  
+  /* --- Responsividade extra --- */
+  @media (max-width: 600px) {
+    nav a {
+      display: block;
+      margin: 10px 0;
+    }
+  }
+  
+
+  .navbar-custom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #1f1f1f;
+    padding: 15px 30px;
+    border-bottom: 1px solid #333;
+}
+
+.nav-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #80dfff;
+}
+
+.nav-links a {
+    margin-left: 20px;
+    color: #80dfff;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: #00ffff;
+}
+
+.btn-voltar {
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: #00bcd4;
+    color: #fff;
+    border-radius: 8px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.btn-voltar:hover {
+    background-color: #0097a7;
+}
+
+/* Estilo escuro para inputs e labels */
+.form-control.bg-dark {
+    background-color: #eeeeee !important;
+    color: #e0e0e0 !important;
+    border: 1px solid #d4cece !important;
+  }
+  
+  .form-label {
+    color: #e0e0e0;
+  }
+  

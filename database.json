@@ -1,0 +1,20 @@
+{
+    "subjects": [
+        {
+            "name": "Inglês",
+            "time": "30"
+        },
+        {
+            "name": "Português",
+            "time": "20"
+        },
+        {
+            "name": "Espanhol",
+            "time": "60"
+        },
+        {
+            "name": "PROGRAMÇÃO",
+            "time": "90"
+        }
+    ]
+}

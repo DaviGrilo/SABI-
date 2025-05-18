@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dicas da IA - Sabiá</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <header class="navbar-custom">
+        <div class="nav-logo">
+            <img src="../static/img/sabia-logo.png" alt="Logo do Sabiá" height="40">
+            <span>SABIÁ</span>
+        </div>
+        <nav class="nav-links">
+            <a href="/">🏠 Início</a>
+            <a href="/add">➕ Adicionar Matéria</a>
+            <a href="/schedule">📅 Cronograma</a>
+            <a href="/recomendacoes">🧠 Dicas da IA</a>
+        </nav>
+    </header>
+
+    <main>
+        <form method="post" action="/recomendacoes">
+            <label for="user_prompt">Fale com o Sabiá 🐦</label>
+            <input type="text" id="user_prompt" name="user_prompt" placeholder="Digite uma pergunta sobre estudos..." required>
+            <button type="submit">Perguntar</button>
+        </form>
+
+        {% if user_answer %}
+        <div class="card">
+            <h3 class="card-title">🤖 Resposta do Sabiá</h3>
+            <div class="card-body">
+                <pre>{{ user_answer }}</pre>
+            </div>
+        </div>
+        {% endif %}
+
+        <div class="card">
+            <h3 class="card-title">📚 Dicas de Estudo</h3>
+            <div class="card-body">
+                <pre>{{ tips }}</pre>
+            </div>
+        </div>
+
+        <div class="card">
+            <h3 class="card-title">🌟 Frase Motivacional</h3>
+            <div class="card-body">
+                <p>{{ motivation }}</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <h3 class="card-title">🧩 Desafio da Semana</h3>
+            <div class="card-body">
+                <div>{{ challenge | safe }}</div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h3 class="card-title">🧠 Pergunta para Refletir</h3>
+            <div class="card-body">
+                <p>{{ reflection }}</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <h3 class="card-title">🕒 Rotina de Estudos</h3>
+            <div class="card-body">
+                <pre>{{ routine }}</pre>
+            </div>
+        </div>
+
+        <div class="text-center mt-4">
+            <a href="/" class="btn-voltar">⬅ Voltar ao Início</a>
+        </div>
+    </main>
+</body>
+</html>
