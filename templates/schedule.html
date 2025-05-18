@@ -5,28 +5,24 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Cronograma - Sabiá</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
-  <link rel="stylesheet" href="/static/css/style.css" />
-  <link rel="website-icon" type="png" href="../static/img/sabia-logo.png" />
+  <link rel="stylesheet" href="/static/css/style.css?" />
+  <link rel="icon" href="/static/img/sabia-logo.png" type="image/png" />
 </head>
 <body>
-  <!-- Navbar igual à index -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-    <div class="container">
-      <a class="navbar-brand d-flex align-items-center" href="/">
-        <img src="../static/img/sabia-logo.png" alt="Sabiá Logo" width="40" class="me-2">
-        <strong>SABIÁ</strong>
-      </a>
-      <div class="collapse navbar-collapse">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link" href="/add">Adicionar Matéria</a></li>
-          <li class="nav-item"><a class="nav-link" href="/schedule">Cronograma</a></li>
-          <li class="nav-item"><a class="nav-link" href="/recomendacoes">Dicas da IA</a></li>
-        </ul>
-      </div>
-    </div>
-  </nav>
 
-  <!-- Conteúdo principal -->
+  <header class="navbar-custom">
+    <div class="nav-logo">
+      <img src="/static/img/sabia-logo.png" alt="Logo do Sabiá" height="40" />
+      <span>SABIÁ</span>
+    </div>
+    <nav class="nav-links">
+      <a href="/">🏠 Início</a>
+      <a href="/add">➕ Adicionar Matéria</a>
+      <a href="/schedule">📅 Cronograma</a>
+      <a href="/recomendacoes">🧠 Dicas da IA</a>
+    </nav>
+  </header>
+
   <div class="container mt-5">
     <h2 class="mb-4 text-center text-light">📅 Seu Cronograma de Estudos</h2>
 
@@ -36,8 +32,28 @@
       <div class="col-md-4">
         <div class="card mb-4 shadow-sm">
           <div class="card-body">
+            {% if loop.index0 == edit_index %}
+
+            <form method="POST" action="/schedule">
+              <input type="hidden" name="index" value="{{ loop.index0 }}">
+              <input type="text" name="name" class="form-control mb-2" value="{{ subject.name }}" required>
+              <input type="number" name="time" class="form-control mb-2" value="{{ subject.time }}" required>
+
+              <button type="submit" class="btn btn-primary btn-sm">Salvar</button>
+              <a href="/schedule" class="btn btn-secondary btn-sm ms-2">Cancelar</a>
+            </form>
+
+            {% else %}
             <h5 class="card-title text-light">{{ subject.name }}</h5>
             <p class="card-text text-secondary">⏱️ Tempo: {{ subject.time }} minutos</p>
+
+            <a href="/schedule?edit={{ loop.index0 }}" class="btn btn-warning btn-sm">✏️ Editar</a>
+
+            <form method="POST" action="/remover" class="d-inline" onsubmit="return confirm('Tem certeza que deseja remover esta matéria?');">
+              <input type="hidden" name="index" value="{{ loop.index0 }}">
+              <button type="submit" class="btn btn-danger btn-sm ms-2">🗑 Remover</button>
+            </form>
+            {% endif %}
           </div>
         </div>
       </div>
