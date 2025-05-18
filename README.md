@@ -51,5 +51,6 @@ venv\Scripts\activate     # Windows
 
 
 
-👤 Autor
+👤 **Autor**
+
 Desenvolvido por DAVI SANTANA.
