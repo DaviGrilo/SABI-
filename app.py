@@ -41,10 +41,31 @@ def add_subject():
         return redirect('/schedule')
     return render_template("add_subject.html")
 
-@app.route('/schedule')
+@app.route('/schedule', methods=['GET', 'POST'])
 def schedule():
     data = load_data()
-    return render_template("schedule.html", subjects=data["subjects"])
+    subjects = data["subjects"]
+
+    edit_index = request.args.get('edit', default=None, type=int)
+
+    if request.method == 'POST':
+        index = int(request.form['index'])
+        subjects[index]['name'] = request.form['name']
+        subjects[index]['time'] = request.form['time']
+        save_data(data)
+        return redirect('/schedule')
+
+    return render_template("schedule.html", subjects=subjects, edit_index=edit_index)
+
+@app.route('/remover', methods=['POST'])
+def remover():
+    index = int(request.form['index'])
+    data = load_data()
+    if 0 <= index < len(data["subjects"]):
+        removido = data["subjects"].pop(index)
+        save_data(data)
+        print(f"Matéria removida: {removido['name']}")
+    return redirect('/schedule')
 
 @app.route('/recomendacoes', methods=['GET', 'POST'])
 def recomendacoes():
@@ -53,7 +74,6 @@ def recomendacoes():
         prompt = request.form.get('user_prompt')
         user_answer = gerar_conteudo(prompt)
 
-    # Converte apenas o desafio em HTML, o resto continua texto simples
     challenge_md = get_weekly_challenge()
     challenge_html = markdown.markdown(challenge_md)
 
@@ -64,7 +84,6 @@ def recomendacoes():
                            reflection=get_reflection_question(),
                            routine=get_study_routine(),
                            user_answer=user_answer)
-
 
 if __name__ == "__main__":
     app.run(debug=True)
