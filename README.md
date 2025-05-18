@@ -45,9 +45,9 @@
    git clone https://github.com/seu-usuario/sabia-assistente.git
    cd SABIA
 
-python -m venv venv
-source venv/bin/activate  # Linux/macOS
-venv\Scripts\activate     # Windows
+- python -m venv venv
+- source venv/bin/activate  # Linux/macOS
+- venv\Scripts\activate     # Windows
 
 
 
