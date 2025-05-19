@@ -1,15 +1,16 @@
 # 🐦 Sabiá – Assistente de Estudos com IA
 
-**Sabiá** é um assistente de estudos construído com **Flask** e **Bootstrap**, que utiliza **Inteligência Artificial** (via API Gemini) para gerar recomendações personalizadas de estudo. Organize suas matérias, crie um cronograma e receba dicas inteligentes para estudar melhor.
+O **SABIÁ** é um assistente de estudos inteligente que ajuda você a organizar sua rotina de estudos, planejar matérias, receber recomendações personalizadas com IA e manter o foco no seu aprendizado.
+
 
 --- **Esse projeto terá mais atualizações futuramente**
 
 ## 📸 Demonstração
 
-![image](https://github.com/user-attachments/assets/ab5eafeb-3d37-4497-a68c-f26ced3ebdb3)
-![image](https://github.com/user-attachments/assets/713216e5-d6ac-4a53-9435-f6d1a125686b)
-![image](https://github.com/user-attachments/assets/60309d0a-3b06-4b97-a2ed-d82d5d84ea9c)
-![image](https://github.com/user-attachments/assets/0bdef63a-6929-4b8a-a5de-2208d7baf00f)
+![image](https://github.com/user-attachments/assets/99b89444-9f72-45c6-a31c-cac488ad0980)
+![image](https://github.com/user-attachments/assets/a0c415dd-c09a-456e-800a-744da6c6b9ca)
+![image](https://github.com/user-attachments/assets/c6c91869-3609-4ba4-8966-9d302111105e)
+![image](https://github.com/user-attachments/assets/2064875f-12b0-4893-99f5-5a95ecfc91bf)
 
 > Interface amigável, dark mode e IA para ajudar nos estudos.
 
@@ -17,11 +18,12 @@
 
 ## 🚀 Funcionalidades
 
-- ✅ Adicionar matérias com tempo de estudo
-- 🗓️ Visualizar cronograma completo
-- 🤖 Obter **dicas personalizadas da IA**
-- 🌙 Interface com tema escuro e responsivo
-- 💾 Persistência com banco de dados (opcional)
+- 📚 **Adicionar Matérias**: Cadastre matérias com nome e tempo de estudo.
+- 📅 **Cronograma Visual**: Veja todas as matérias organizadas em cards, com nome e tempo.
+- 🗑 **Remover Matérias**: Remova matérias do cronograma com um clique e confirmação.
+- 🧠 **Dicas da IA**: Receba recomendações personalizadas, desafios semanais e perguntas reflexivas usando a API do Google Gemini.
+- ✨ **Interface Responsiva**: Design moderno e leve com Bootstrap 5.
+- 💾 **Armazenamento Local**: Dados armazenados localmente em `database.json`.
 
 ---
 
@@ -35,20 +37,25 @@
 
 ---
 
+## 📂 Como Rodar Localmente
 
----
+```bash
+# Clone o repositório
+git clone https://github.com/DaviGrilo/SABIA.git
+cd SABIA
 
-## ⚙️ Como rodar o projeto
+# Crie e ative o ambiente virtual
+python -m venv venv
+source venv/bin/activate       # No Windows: venv\Scripts\activate
 
-1. **Clone o repositório**  
-   ```bash
-   git clone https://github.com/seu-usuario/sabia-assistente.git
-   cd SABIA
+# Instale as dependências
+pip install -r requirements.txt
 
-- python -m venv venv
-- source venv/bin/activate  # Linux/macOS
-- venv\Scripts\activate     # Windows
+# Crie um arquivo .env com sua chave da API
+echo "GOOGLE_API_KEY=sua_chave_aqui" > .env
 
+# Execute a aplicação
+python app.py
 
 
 👤 **Autor**
