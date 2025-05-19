@@ -56,7 +56,7 @@ echo "GOOGLE_API_KEY=sua_chave_aqui" > .env
 
 # Execute a aplicação
 python app.py
-
+````
 ---
 
 ##👤 **Autor**
