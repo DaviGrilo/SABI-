@@ -59,5 +59,5 @@ python app.py
 ````
 ---
 
-##👤 **Autor**
+## 👤 **Autor**
 - Desenvolvido por DAVI SANTANA.
