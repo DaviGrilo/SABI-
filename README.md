@@ -46,8 +46,11 @@ cd SABIA
 
 # Crie e ative o ambiente virtual
 python -m venv venv
-source venv/bin/activate       # No Windows: venv\Scripts\activate
-
+# No Windows: venv\Scripts\activate
+source venv/bin/activate
+# Mac/Linux:
+source venv/bin/activate
+       
 # Instale as dependências
 pip install -r requirements.txt
 
